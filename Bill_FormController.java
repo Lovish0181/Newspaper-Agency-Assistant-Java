@@ -7,7 +7,17 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.Period;
+import java.util.Properties;
 import java.util.ResourceBundle;
+
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.AddressException;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -97,12 +107,13 @@ public class Bill_FormController {
 			pst1=con.prepareStatement("update customers set dos=? where mobile=?");
 			pst1.setDate(1,Date.valueOf(dateupto.getValue()));
 			pst1.setString(2,txtmobile.getText());
-			
 			pst1.executeUpdate();
-		} catch (SQLException e) {
+			
+    	}
+			    catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+			    }
     	
     }
     void doprice()
@@ -117,6 +128,6 @@ public class Bill_FormController {
 
     @FXML
     void initialize() {
-     con=Connect.getConnection();   
-    }
+     con=Connect.getConnection();
+}
 }
