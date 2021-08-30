@@ -7,30 +7,30 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane minHeight="200.0" minWidth="300.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AreaMaster.AreaMaster_FormController">
+<AnchorPane minHeight="200.0" minWidth="400.0" style="-fx-background-color: #030307;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AreaMaster.AreaMaster_FormController">
    <children>
-      <Text fontSmoothingType="LCD" layoutX="34.0" layoutY="47.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" text="AREA MASTER">
+      <Text fill="WHITE" fontSmoothingType="LCD" layoutX="155.0" layoutY="48.0" stroke="WHITE" strokeLineCap="ROUND" strokeLineJoin="ROUND" text="AREA">
          <font>
             <Font name="Cambria Bold" size="35.0" />
          </font>
       </Text>
-      <Button fx:id="btnsave" layoutX="19.0" layoutY="141.0" mnemonicParsing="false" onAction="#dosave" style="-fx-background-color: black;" text="Save" textFill="WHITE">
+      <Button fx:id="btnsave" layoutX="33.0" layoutY="141.0" mnemonicParsing="false" onAction="#dosave" prefHeight="37.0" prefWidth="83.0" style="-fx-background-color: #302455;" text="Save" textFill="WHITE">
          <font>
             <Font name="Calibri Bold" size="20.0" />
          </font>
       </Button>
-      <Button fx:id="btndelete" layoutX="198.0" layoutY="141.0" mnemonicParsing="false" onAction="#dodelete" style="-fx-background-color: black;" text="Delete" textFill="WHITE">
+      <Button fx:id="btndelete" layoutX="280.0" layoutY="141.0" mnemonicParsing="false" onAction="#dodelete" style="-fx-background-color: #302455;" text="Delete" textFill="WHITE">
          <font>
             <Font name="Calibri Bold" size="20.0" />
          </font>
       </Button>
-      <Button fx:id="btnupdate" layoutX="97.0" layoutY="141.0" mnemonicParsing="false" onAction="#doupdate" style="-fx-background-color: black;" text="Update" textFill="WHITE">
+      <Button fx:id="btnupdate" layoutX="149.0" layoutY="141.0" mnemonicParsing="false" onAction="#doupdate" prefHeight="37.0" prefWidth="102.0" style="-fx-background-color: #302455;" text="Update" textFill="WHITE">
          <font>
             <Font name="Calibri Bold" size="20.0" />
          </font>
       </Button>
-      <ComboBox fx:id="comboarea" editable="true" layoutX="104.0" layoutY="81.0" onAction="#docomboarea" prefWidth="150.0" visibleRowCount="30" />
-      <Label layoutX="47.0" layoutY="84.0" text="Area">
+      <ComboBox fx:id="comboarea" editable="true" layoutX="148.0" layoutY="81.0" onAction="#docomboarea" prefWidth="150.0" visibleRowCount="30" />
+      <Label layoutX="95.0" layoutY="84.0" text="Area" textFill="WHITE">
          <font>
             <Font name="Cambria Bold" size="20.0" />
          </font>

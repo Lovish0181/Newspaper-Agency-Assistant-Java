@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -21,16 +22,16 @@ public class Dashboard_FormController {
     private URL location;
     
     @FXML
-    private ImageView imglogout;
-    
-    @FXML
     private ImageView develo;
     
     @FXML
     private Label develop;
+    
+    @FXML
+    private Button logout;
 
     @FXML
-    void dologout(MouseEvent event) {
+    void dologout(ActionEvent event) {
     	try{
     		FXMLLoader fxmlloader= new FXMLLoader(getClass().getResource("/Login1/Login1_Form.fxml"));
         	Parent root=(Parent)fxmlloader.load();
@@ -39,7 +40,7 @@ public class Dashboard_FormController {
         	stage.setScene(new Scene(root));
         	stage.show();
             
-        	Scene scene1=(Scene)imglogout.getScene();
+        	Scene scene1=(Scene)logout.getScene();
 			scene1.getWindow().hide();
 
 		}
@@ -74,6 +75,7 @@ public class Dashboard_FormController {
 		}
 
     }
+    
 
     @FXML
     void dobillcollector(ActionEvent event) {
@@ -156,104 +158,6 @@ public class Dashboard_FormController {
     }
 
     @FXML
-    void docustomerpanel(ActionEvent event) {
-    	try{
-    		FXMLLoader fxmlloader= new FXMLLoader(getClass().getResource("/CustomerPanel/CustomerPanel_Form.fxml"));
-        	Parent root=(Parent)fxmlloader.load();
-        	
-        	Stage stage=new Stage();
-        	stage.setScene(new Scene(root));
-        	stage.show();
-    		
-    		
-			//to hide the opened window
-			 
-			  /* Scene scene1=(Scene)btnComboApp.getScene();
-			   scene1.getWindow().hide();
-			 */
-
-		}
-		catch(Exception e)
-		{
-			e.printStackTrace();
-		}
-
-    }
-
-    @FXML
-    void docustomersview(ActionEvent event) {
-    	try{
-    		
-    		FXMLLoader fxmlloader= new FXMLLoader(getClass().getResource("/CustomerView/CustomerView_Form.fxml"));
-        	Parent root=(Parent)fxmlloader.load();
-        	
-        	Stage stage=new Stage();
-        	stage.setScene(new Scene(root));
-        	stage.show();
-    		
-    		
-			//to hide the opened window
-			 
-			  /* Scene scene1=(Scene)btnComboApp.getScene();
-			   scene1.getWindow().hide();
-			 */
-
-		}
-		catch(Exception e)
-		{
-			e.printStackTrace();
-		}
-    }
-
-    @FXML
-    void dohawkermanager(ActionEvent event) {
-    	try{
-    		FXMLLoader fxmlloader= new FXMLLoader(getClass().getResource("/HawkerManager/HawkersManager_Form.fxml"));
-        	Parent root=(Parent)fxmlloader.load();
-        	
-        	Stage stage=new Stage();
-        	stage.setScene(new Scene(root));
-        	stage.show();
-    		
-			//to hide the opened window
-			 
-			  /* Scene scene1=(Scene)btnComboApp.getScene();
-			   scene1.getWindow().hide();
-			 */
-
-		}
-		catch(Exception e)
-		{
-			e.printStackTrace();
-		}
-    }
-
-    @FXML
-    void dohawkersview(ActionEvent event) {
-    	try{
-    		FXMLLoader fxmlloader= new FXMLLoader(getClass().getResource("/Hawker_tableview/Hawkerview_Form.fxml"));
-        	Parent root=(Parent)fxmlloader.load();
-        	
-        	Stage stage=new Stage();
-        	stage.setScene(new Scene(root));
-        	stage.show();
-    		
-    		
-    		
-			//to hide the opened window
-			 
-			  /* Scene scene1=(Scene)btnComboApp.getScene();
-			   scene1.getWindow().hide();
-			 */
-
-		}
-		catch(Exception e)
-		{
-			e.printStackTrace();
-		}
-    }
-
-    @FXML
     void dopapermaster(ActionEvent event) {
     	try{
     		FXMLLoader fxmlloader= new FXMLLoader(getClass().getResource("/PaperMaster/Paper_Form.fxml"));
@@ -299,8 +203,112 @@ public class Dashboard_FormController {
 			e.printStackTrace();
 		}
     }
+
+@FXML
+void docustomerpanel(MouseEvent event) {
+	try{
+		FXMLLoader fxmlloader= new FXMLLoader(getClass().getResource("/CustomerPanel/CustomerPanel_Form.fxml"));
+    	Parent root=(Parent)fxmlloader.load();
+    	
+    	Stage stage=new Stage();
+    	stage.setScene(new Scene(root));
+    	stage.show();
+		
+		
+		//to hide the opened window
+		 
+		  /* Scene scene1=(Scene)btnComboApp.getScene();
+		   scene1.getWindow().hide();
+		 */
+
+	}
+	catch(Exception e)
+	{
+		e.printStackTrace();
+	}
+
+
+}
+
+@FXML
+void docustomersview(MouseEvent event) {
+	try{
+		
+		FXMLLoader fxmlloader= new FXMLLoader(getClass().getResource("/CustomerView/CustomerView_Form.fxml"));
+    	Parent root=(Parent)fxmlloader.load();
+    	
+    	Stage stage=new Stage();
+    	stage.setScene(new Scene(root));
+    	stage.show();
+		
+		
+		//to hide the opened window
+		 
+		  /* Scene scene1=(Scene)btnComboApp.getScene();
+		   scene1.getWindow().hide();
+		 */
+
+	}
+	catch(Exception e)
+	{
+		e.printStackTrace();
+	}
+
+}
+
+@FXML
+void dohawkermanager(MouseEvent event) {
+	try{
+		FXMLLoader fxmlloader= new FXMLLoader(getClass().getResource("/HawkerManager/HawkersManager_Form.fxml"));
+    	Parent root=(Parent)fxmlloader.load();
+    	
+    	Stage stage=new Stage();
+    	stage.setScene(new Scene(root));
+    	stage.show();
+		
+		//to hide the opened window
+		 
+		  /* Scene scene1=(Scene)btnComboApp.getScene();
+		   scene1.getWindow().hide();
+		 */
+
+	}
+	catch(Exception e)
+	{
+		e.printStackTrace();
+	}
+
+}
+
+@FXML
+void dohawkersview(MouseEvent event) {
+	try{
+		FXMLLoader fxmlloader= new FXMLLoader(getClass().getResource("/Hawker_tableview/Hawkerview_Form.fxml"));
+    	Parent root=(Parent)fxmlloader.load();
+    	
+    	Stage stage=new Stage();
+    	stage.setScene(new Scene(root));
+    	stage.show();
+		
+		
+		
+		//to hide the opened window
+		 
+		  /* Scene scene1=(Scene)btnComboApp.getScene();
+		   scene1.getWindow().hide();
+		 */
+
+	}
+	catch(Exception e)
+	{
+		e.printStackTrace();
+	}
+
+}
     @FXML
     void initialize() {
 
     }
 }
+
+

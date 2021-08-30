@@ -3,6 +3,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
@@ -113,7 +114,20 @@ public class  Login1_FormController{
      			}
         
     }
-
+    @FXML
+    void doforget(MouseEvent event) throws SQLException {
+    	pst=con.prepareStatement("select distinct password from users where username=?");
+    	pst.setString(1,txtusername.getText());
+    	ResultSet records=pst.executeQuery();
+    	String forget;
+    	while(records.next())
+    	{
+    	  forget=records.getString("password");
+    	  txtpass.setText(forget);
+    	}
+    	
+    	
+    }
     @FXML
     void initialize() {
     	con=Connect.getConnection();

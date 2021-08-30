@@ -70,17 +70,76 @@ import javafx.scene.control.TextField;
 	        	    	alert3.showAndWait();
 	        	    	
 					}
+					 String upperCaseChars = "(.*[A-Z].*)";
+					  String lowerCaseChars = "(.*[a-z].*)";
+					  String numbers = "(.*[0-9].*)";
+                String specialChars = "(.*[@,#,$,%].*$)";
 					pst.setString(2,txtpass.getText());
+					if(pass.length() < 8)
+					{
+						Alert alert3 = new Alert(AlertType.WARNING);
+	        	    	alert3.setTitle("Warning Message");
+	        	    	alert3.setContentText("Password is too short...!");
+	        	    	alert3.showAndWait();
+					}
+					else
+						if(!pass.matches(upperCaseChars))
+						{
+							Alert alert2 = new Alert(AlertType.WARNING);
+		        	    	alert2.setTitle("Warning Message");
+		        	    	alert2.setContentText("Password must Include UpperCase Characters");
+		        	    	alert2.showAndWait();				
+						}
+						else
+							if(!pass.matches(lowerCaseChars))
+							{
+								Alert alert2 = new Alert(AlertType.WARNING);
+			        	    	alert2.setTitle("Warning Message");
+			        	    	alert2.setContentText("Password must Include LowerCase Characters");
+			        	    	alert2.showAndWait();				
+							}
+							else
+								if(!pass.matches(numbers))
+								{
+									Alert alert2 = new Alert(AlertType.WARNING);
+				        	    	alert2.setTitle("Warning Message");
+				        	    	alert2.setContentText("Password must Include Numbers");
+				        	    	alert2.showAndWait();				
+								}
+								else
+									if(!pass.matches(specialChars))
+									{
+										Alert alert2 = new Alert(AlertType.WARNING);
+					        	    	alert2.setTitle("Warning Message");
+					        	    	alert2.setContentText("Password must Include Special Characters");
+					        	    	alert2.showAndWait();				
+									}
+					else
 	                if(pass.equals(pass1)==true)
 	    	    	{
 	    	    		Alert alert2 = new Alert(AlertType.WARNING);
 	        	    	alert2.setTitle("Warning Message");
 	        	    	alert2.setContentText("Password Confirmed");
 	        	    	alert2.showAndWait();
-	        	    	 pst.setString(3,txtphone.getText());
-	        	    	pst.setDate(4,Date.valueOf(dateDob.getValue()));
-	                   
+	        	    		        	    	 	
+	    	    	}
+	    	    	else
+	    	    	{
+	    	    		Alert alert1 = new Alert(AlertType.WARNING);
+	        	    	alert1.setTitle("Warning Message");
+	        	    	alert1.setContentText("Incorrect Password");
+	        	    	alert1.showAndWait();
+	    	    	}
+					 pst.setString(3,txtphone.getText());
+	        	    	pst.setDate(4,Date.valueOf(dateDob.getValue()));	                   
 	        	    	pst.executeUpdate();
+	        	   
+	        	    	Alert alert = new Alert(AlertType.WARNING);
+	        	    	alert.setTitle("Warning Message");
+	        	    	alert.setHeaderText("ThankYou For Using Our Services");
+	        	    	alert.setContentText("Signed Up Successfully");
+	        	    	alert.showAndWait();
+	        	   
 	        	    	try{
 	             			  FXMLLoader fxmlloader= new FXMLLoader(getClass().getResource("/Login1/Login1_Form.fxml"));
 	             	        	Parent root=(Parent)fxmlloader.load();
@@ -97,21 +156,8 @@ import javafx.scene.control.TextField;
 	             			{
 	             				e.printStackTrace();
 	             			}
-	        	    	Alert alert = new Alert(AlertType.WARNING);
-	        	    	alert.setTitle("Warning Message");
-	        	    	alert.setHeaderText("ThankYou For Using Our Services");
-	        	    	alert.setContentText("Signed Up Successfully");
-	        	    	alert.showAndWait();
-	        	    	
-	    	    	}
-	    	    	else
-	    	    	{
-	    	    		Alert alert1 = new Alert(AlertType.WARNING);
-	        	    	alert1.setTitle("Warning Message");
-	        	    	alert1.setContentText("Incorrect Password");
-	        	    	alert1.showAndWait();
-	    	    	}
 
+				
                 }catch (SQLException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();

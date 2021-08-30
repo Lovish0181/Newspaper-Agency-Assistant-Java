@@ -55,10 +55,8 @@ public class AreaMaster_FormController {
     @FXML
     void doupdate(ActionEvent event) {
     	try {
-			pst=con.prepareStatement("update areas set area=?  where area=?");
-			pst.setString(1,comboarea.getSelectionModel().getSelectedItem());
-			pst.setString(2,comboarea.getEditor().getText());
-			
+			pst=con.prepareStatement("update areas SET area=?");
+			pst.setString(1,comboarea.getEditor().getText());
 			int count=pst.executeUpdate();
 			if(count==0)
 			btnupdate.setText("Invalid");
@@ -79,7 +77,7 @@ public class AreaMaster_FormController {
     		pst=con.prepareStatement("delete from areas where area=?");
 			pst.setString(1,comboarea.getEditor().getText());
 			pst.executeUpdate();
-			btnsave.setText("Deleted");
+			btndelete.setText("Deleted");
 			btnsave.setDisable(true);
 			btnupdate.setDisable(true);
     	} catch (SQLException e) {
