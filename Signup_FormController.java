@@ -75,45 +75,13 @@ import javafx.scene.control.TextField;
 					  String numbers = "(.*[0-9].*)";
                 String specialChars = "(.*[@,#,$,%].*$)";
 					pst.setString(2,txtpass.getText());
-					if(pass.length() < 8)
+					if(!pass.matches(upperCaseChars) || !pass.matches(lowerCaseChars) || !pass.matches(numbers) || !pass.matches(specialChars))
 					{
 						Alert alert3 = new Alert(AlertType.WARNING);
 	        	    	alert3.setTitle("Warning Message");
-	        	    	alert3.setContentText("Password is too short...!");
+	        	    	alert3.setContentText("Password must include Uppercase,Lowercase,Numbers and Special Characters");
 	        	    	alert3.showAndWait();
 					}
-					else
-						if(!pass.matches(upperCaseChars))
-						{
-							Alert alert2 = new Alert(AlertType.WARNING);
-		        	    	alert2.setTitle("Warning Message");
-		        	    	alert2.setContentText("Password must Include UpperCase Characters");
-		        	    	alert2.showAndWait();				
-						}
-						else
-							if(!pass.matches(lowerCaseChars))
-							{
-								Alert alert2 = new Alert(AlertType.WARNING);
-			        	    	alert2.setTitle("Warning Message");
-			        	    	alert2.setContentText("Password must Include LowerCase Characters");
-			        	    	alert2.showAndWait();				
-							}
-							else
-								if(!pass.matches(numbers))
-								{
-									Alert alert2 = new Alert(AlertType.WARNING);
-				        	    	alert2.setTitle("Warning Message");
-				        	    	alert2.setContentText("Password must Include Numbers");
-				        	    	alert2.showAndWait();				
-								}
-								else
-									if(!pass.matches(specialChars))
-									{
-										Alert alert2 = new Alert(AlertType.WARNING);
-					        	    	alert2.setTitle("Warning Message");
-					        	    	alert2.setContentText("Password must Include Special Characters");
-					        	    	alert2.showAndWait();				
-									}
 					else
 	                if(pass.equals(pass1)==true)
 	    	    	{
@@ -121,16 +89,7 @@ import javafx.scene.control.TextField;
 	        	    	alert2.setTitle("Warning Message");
 	        	    	alert2.setContentText("Password Confirmed");
 	        	    	alert2.showAndWait();
-	        	    		        	    	 	
-	    	    	}
-	    	    	else
-	    	    	{
-	    	    		Alert alert1 = new Alert(AlertType.WARNING);
-	        	    	alert1.setTitle("Warning Message");
-	        	    	alert1.setContentText("Incorrect Password");
-	        	    	alert1.showAndWait();
-	    	    	}
-					 pst.setString(3,txtphone.getText());
+	        	    	pst.setString(3,txtphone.getText());
 	        	    	pst.setDate(4,Date.valueOf(dateDob.getValue()));	                   
 	        	    	pst.executeUpdate();
 	        	   
@@ -158,7 +117,16 @@ import javafx.scene.control.TextField;
 	             			}
 
 				
-                }catch (SQLException e) {
+		        	    	 	
+	    	    	}
+	    	    	else
+	    	    	{
+	    	    		Alert alert1 = new Alert(AlertType.WARNING);
+	        	    	alert1.setTitle("Warning Message");
+	        	    	alert1.setContentText("Incorrect Password");
+	        	    	alert1.showAndWait();
+	    	    	}
+					}catch (SQLException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}

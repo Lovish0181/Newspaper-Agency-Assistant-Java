@@ -7,7 +7,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -28,10 +27,13 @@ public class Dashboard_FormController {
     private Label develop;
     
     @FXML
-    private Button logout;
+    private ImageView logout;
 
     @FXML
-    void dologout(ActionEvent event) {
+    private Label logouts;
+
+    @FXML
+    void dologout(MouseEvent event) {
     	try{
     		FXMLLoader fxmlloader= new FXMLLoader(getClass().getResource("/Login1/Login1_Form.fxml"));
         	Parent root=(Parent)fxmlloader.load();
@@ -42,6 +44,9 @@ public class Dashboard_FormController {
             
         	Scene scene1=(Scene)logout.getScene();
 			scene1.getWindow().hide();
+
+			Scene scene2=(Scene)logouts.getScene();
+			scene2.getWindow().hide();
 
 		}
 		catch(Exception e)

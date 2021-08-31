@@ -172,17 +172,12 @@
                   <Image url="@newspaper.png" />
                </image>
             </ImageView>
-            <Button fx:id="logout" alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" layoutY="511.0" mnemonicParsing="false" onAction="#dologout" prefHeight="91.0" prefWidth="118.0" style="-fx-background-color: #302455;" text="Logout" textFill="WHITE">
-               <font>
-                  <Font name="Cambria Bold" size="17.0" />
-               </font>
-            </Button>
             <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="38.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@location.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="39.0" layoutY="530.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="logout" fitHeight="40.0" fitWidth="40.0" layoutX="39.0" layoutY="530.0" onMouseClicked="#dologout" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@logout%20(5).png" />
                </image>
@@ -202,6 +197,11 @@
                   <Image url="@bills.png" />
                </image>
             </ImageView>
+            <Label fx:id="logouts" layoutX="29.0" layoutY="579.0" onMouseClicked="#dologout" text="Logout" textFill="WHITE">
+               <font>
+                  <Font name="Cambria Bold" size="17.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
       <Label fx:id="develop" layoutX="664.0" layoutY="27.0" onMouseClicked="#dodeveloper" text="Know the Developer">
