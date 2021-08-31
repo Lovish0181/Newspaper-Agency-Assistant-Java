@@ -5,10 +5,14 @@ module ProjectNewsPaper {
 	requires java.sql;
 	requires javafx.base;
 	requires java.desktop;
+	requires jdk.jdi;
 
 
 exports Login1;
 opens Login1 to javafx.graphics, javafx.fxml;
+
+exports ForgotPassword;
+opens ForgotPassword to javafx.graphics, javafx.fxml;
 
 exports Signup;
 opens Signup to javafx.graphics, javafx.fxml;
